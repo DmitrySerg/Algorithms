@@ -2,7 +2,15 @@
 import sys
 
 def get_change(m):
-    #write your code here
+    n_tens = m//10
+    m -= n_tens*10
+
+    n_fives = m//5
+    m -= n_fives*5
+
+    n_ones = m
+    m = n_tens + n_fives + n_ones
+    
     return m
 
 if __name__ == '__main__':

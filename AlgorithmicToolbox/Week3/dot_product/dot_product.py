@@ -2,8 +2,11 @@
 
 import sys
 
+import numpy as np
 def max_dot_product(a, b):
     #write your code here
+    a = np.array(sorted(a, reverse=True))
+    b = np.array(sorted(b, reverse=True))
     res = 0
     for i in range(len(a)):
         res += a[i] * b[i]

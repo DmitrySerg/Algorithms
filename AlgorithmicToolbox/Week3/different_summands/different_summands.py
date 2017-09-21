@@ -2,9 +2,19 @@
 import sys
 
 def optimal_summands(n):
+    l = 1
     summands = []
-    #write your code here
+    while n>0:
+        if n <= 2*l:
+            summands.append(n)
+            break
+        else:
+            summands.append(l)
+            n -= l
+            l += 1
     return summands
+
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

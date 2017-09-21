@@ -3,8 +3,18 @@ import sys
 
 def get_optimal_value(capacity, weights, values):
     value = 0.
-    # write your code here
+    prices = [value/weight for value, weight in zip(values, weights)]
 
+    weights = [w for _,w in sorted(zip(prices,weights), reverse=True)]
+    values = [v for _,v in sorted(zip(prices,values), reverse=True)]
+    prices = sorted(prices, reverse=True)
+    
+    for i in range(n):
+        if capacity == 0:
+            return value
+        a = min(weights[i], capacity)
+        value += a * prices[i]
+        capacity -= a    
     return value
 
 
