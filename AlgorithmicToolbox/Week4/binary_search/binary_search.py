@@ -1,15 +1,19 @@
 # Uses python3
 import sys
 
-
 def binary_search(a, left, right, x):
-    if (right < left) or (x>a[right-1]):
-        return left - 1
+    
+    if (right < left) or (x>a[-1]):
+        return -1
+    
     mid = int(left + (right-left)/2)
+    
     if x == a[mid]:
         return mid
+    
     elif x < a[mid]:
         return binary_search(a, left, mid-1, x)
+    
     else:
         return binary_search(a, mid+1, right, x)
 
